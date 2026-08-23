@@ -6,7 +6,7 @@ class ShapeAreaCalculator_AWT
     Frame f1,f2;
     Label l1,l2,l3,l4;
     Choice c;
-    Button b1,b2;
+    Button b1,b2,b3;
 
     ShapeAreaCalculator_AWT()
     {
@@ -22,7 +22,7 @@ class ShapeAreaCalculator_AWT
         b2.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e)
             {
-                String data = "The Shape You Selected is :" + "    " +c.getItem(c.getSelectedIndex());
+                String data = "The Shape You Selected is :" + "  " +c.getItem(c.getSelectedIndex());
                 l3.setText(data);
             }
         });
@@ -31,17 +31,17 @@ class ShapeAreaCalculator_AWT
         l2.setBounds(30,100,90,20);
 
         c = new Choice();
-        c.add("Circle");
-        c.add("Squair");
-        c.add("Rectangle");
-        c.add("Triangle");
-        c.add("Parallelogram");
-        c.add("Rombus");
-        c.add("Trapezium");
-        c.add("Kite");
-        c.add("Ellipse");
-        c.add("Hexagon"); 
-        c.setBounds(140,100,100,40);
+        c.add("CIRCLE");
+        c.add("SQUAIR");
+        c.add("RECTANGLE");
+        c.add("TRIANGLE");
+        c.add("PARALLELOGRAM");
+        c.add("ROMBUS");
+        c.add("TRAPEZIUM");
+        c.add("KITE");
+        c.add("ELLIPSE");
+        c.add("HEXAGON"); 
+        c.setBounds(140,100,130,40);
 
         l3 = new Label("The Shape You Selected is :");
         l3.setBounds(20,200,265,20);
@@ -56,11 +56,21 @@ class ShapeAreaCalculator_AWT
                 f2.setSize(300,400);
                 f2.setLayout(null);
 
-                l4 = new Label(c.getItem(c.getSelectedIndex()) + " " + "Area calculater");
-                l4.setBounds(70,50,158,20);
+                l4 = new Label(c.getItem(c.getSelectedIndex()) + " " + "AREA CALCULATER");
+                l4.setBounds(50,50,220,20);
 
+                b3 = new Button("Home");
+                b3.setBounds(250,370,40,20);
+                b3.addActionListener(new ActionListener(){
+                    public void actionPerformed(ActionEvent e)
+                    {
+                        f1.setVisible(true);
+                        f2.setVisible(false);
+                    }
+                });
 
                 f2.add(l4);
+                f2.add(b3);
                 f1.setVisible(false);
                 f2.setVisible(true);
  
