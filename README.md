@@ -7,9 +7,9 @@ A simple **Java AWT GUI project** that calculates the area of different geometri
 * Select a geometric shape
 * Enter the required measurements
 * Calculate the area
-* Displays the calculated result
-* Uses separate frames for different shapes
+* Clear input and results
 * Basic input validation
+* Uses separate frames for different shapes
 
 ## 🛠️ Technologies Used
 
@@ -19,11 +19,9 @@ A simple **Java AWT GUI project** that calculates the area of different geometri
 
 ## 📐 Shapes
 
-The project includes:
-
 * Circle ✓
 * Square ✓
-* Rectangle → Coming Soon
+* Rectangle ✓
 * Triangle → Coming Soon
 * Parallelogram → Coming Soon
 * Rhombus → Coming Soon
@@ -41,7 +39,7 @@ The project includes:
 
 ## 🎯 Purpose
 
-This project was created to practice **Java AWT, GUI components, event handling, frames, buttons, and basic mathematical operations**.
+This project was created to practice **Java AWT, GUI components, event handling, frames, buttons, input handling, and basic mathematical operations**.
 
 ## 👨‍💻 Author
 
