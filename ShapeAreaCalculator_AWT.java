@@ -1,10 +1,17 @@
 import java.awt.*;
 import java.awt.event.*;
 
+
+//ui     :- f1,l1,l2,l3,b1,b2,choice c
+
+//ui2    :- f2,l4,switche,b3
+
+//circle :- f2,l5,l6,l7,t1,b4,
+
 class ShapeAreaCalculator_AWT
 {
     Frame f1,f2;
-    Label l1,l2,l3,l4;
+    Label l1,l2,l3,l4,l6;
     Choice c;
     Button b1,b2,b3;
 
@@ -52,12 +59,57 @@ class ShapeAreaCalculator_AWT
         b1.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e)
             {
+                
                 f2 = new Frame("Calculater");
                 f2.setSize(300,400);
                 f2.setLayout(null);
-
+                
                 l4 = new Label(c.getItem(c.getSelectedIndex()) + " " + "AREA CALCULATER");
                 l4.setBounds(50,50,220,20);
+
+                String switche;
+                switche = c.getItem(c.getSelectedIndex());
+
+                switch(switche)
+                {
+                    case "CIRCLE" :
+
+                            TextField t1 = new TextField();
+                            t1.setBounds(180,100,90,20);
+
+                            l6 = new Label("");
+                            l6.setBounds(20,150,200,20);
+                            l6.setVisible(false);
+
+                            Label l5 = new Label("Enter radius of the circle :");
+                            l5.setBounds(20,100,150,20);
+
+                            Button b4 = new Button("Calculate");
+                            b4.setBounds(115,200,60,20);
+
+                            b4.addActionListener(new ActionListener(){
+                                public void actionPerformed(ActionEvent e)
+                                {
+                                    if (t1.getText().isEmpty())
+                                    {
+                                        Label l7 = new Label("Error : TextField Cannot Be Empty");
+                                        l7.setBounds(20,150,200,20);
+                                        f2.add(l7);
+                                    }
+                                    else
+                                    {
+                                        int r = Integer.parseInt(t1.getText());
+                                        double area = 22.0/7*r*r ;
+                                        l6.setVisible(true);
+                                        l6.setText("The Area Of Circle is :"+" "+(float)area);
+                                    }
+                                }
+                            });                            
+                            f2.add(b4);
+                            f2.add(l5);
+                            f2.add(l6);
+                            f2.add(t1);
+                }
 
                 b3 = new Button("Home");
                 b3.setBounds(250,370,40,20);
@@ -69,8 +121,12 @@ class ShapeAreaCalculator_AWT
                     }
                 });
 
+
+
                 f2.add(l4);
                 f2.add(b3);
+
+
                 f1.setVisible(false);
                 f2.setVisible(true);
  
