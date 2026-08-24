@@ -11,9 +11,10 @@ import java.awt.event.*;
 class ShapeAreaCalculator_AWT
 {
     Frame f1,f2;
-    Label l1,l2,l3,l4,l6;
+    Label l1,l2,l3,l4,l5,l6,l7;
     Choice c;
-    Button b1,b2,b3;
+    Button b1,b2,b3,b4;
+    TextField t1;
 
     ShapeAreaCalculator_AWT()
     {
@@ -74,17 +75,17 @@ class ShapeAreaCalculator_AWT
                 {
                     case "CIRCLE" :
 
-                            TextField t1 = new TextField();
+                            t1 = new TextField();
                             t1.setBounds(180,100,90,20);
 
                             l6 = new Label("");
                             l6.setBounds(20,150,200,20);
                             l6.setVisible(false);
 
-                            Label l5 = new Label("Enter radius of the circle :");
+                            l5 = new Label("Enter radius of the circle :");
                             l5.setBounds(20,100,150,20);
 
-                            Button b4 = new Button("Calculate");
+                            b4 = new Button("Calculate");
                             b4.setBounds(115,200,60,20);
 
                             b4.addActionListener(new ActionListener(){
@@ -92,13 +93,13 @@ class ShapeAreaCalculator_AWT
                                 {
                                     if (t1.getText().isEmpty())
                                     {
-                                        Label l7 = new Label("Error : TextField Cannot Be Empty");
+                                        l7 = new Label("Error : TextField Cannot Be Empty");
                                         l7.setBounds(20,150,200,20);
                                         f2.add(l7);
                                     }
                                     else
                                     {
-                                        int r = Integer.parseInt(t1.getText());
+                                        Double r = Double.parseDouble(t1.getText());
                                         double area = 22.0/7*r*r ;
                                         l6.setVisible(true);
                                         l6.setText("The Area Of Circle is :"+" "+(float)area);
@@ -109,6 +110,46 @@ class ShapeAreaCalculator_AWT
                             f2.add(l5);
                             f2.add(l6);
                             f2.add(t1);
+                            break;
+
+
+                    case "SQUAIR" :
+                            t1 = new TextField();
+                            t1.setBounds(180,100,90,20);
+
+                            l6 = new Label("");
+                            l6.setBounds(20,150,200,20);
+                            l6.setVisible(false);
+
+                            l5 = new Label("Enter radius of the squair :");
+                            l5.setBounds(20,100,150,20);
+
+                            b4 = new Button("Calculate");
+                            b4.setBounds(115,200,60,20);
+
+                            b4.addActionListener(new ActionListener(){
+                                public void actionPerformed(ActionEvent e)
+                                {
+                                    if (t1.getText().isEmpty())
+                                    {
+                                        l7 = new Label("Error : TextField Cannot Be Empty");
+                                        l7.setBounds(20,150,200,20);
+                                        f2.add(l7);
+                                    }
+                                    else
+                                    {
+                                        Double s = Double.parseDouble(t1.getText());
+                                        double area = s*s ;
+                                        l6.setVisible(true);
+                                        l6.setText("The Area Of Squair is :"+" "+(float)area);
+                                    }
+                                }
+                            });                            
+                            f2.add(b4);
+                            f2.add(l5);
+                            f2.add(l6);
+                            f2.add(t1);
+                            break;
                 }
 
                 b3 = new Button("Home");
