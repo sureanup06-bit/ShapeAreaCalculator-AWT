@@ -9,6 +9,7 @@ A simple **Java AWT GUI project** that calculates the area of different geometri
 * Calculate the area
 * Displays the calculated result
 * Uses separate frames for different shapes
+* Basic input validation
 
 ## 🛠️ Technologies Used
 
@@ -20,18 +21,16 @@ A simple **Java AWT GUI project** that calculates the area of different geometri
 
 The project includes:
 
-* Circle
-* Rectangle
-* Square
-* Triangle
-* Parallelogram
-* Rhombus
-* Trapezium
-* Kite
-* Ellipse
-* Hexagon
-
-> 🚧 Currently, **Circle** is implemented. More shapes are coming soon.
+* Circle ✓
+* Square ✓
+* Rectangle → Coming Soon
+* Triangle → Coming Soon
+* Parallelogram → Coming Soon
+* Rhombus → Coming Soon
+* Trapezium → Coming Soon
+* Kite → Coming Soon
+* Ellipse → Coming Soon
+* Hexagon → Coming Soon
 
 ## ▶️ How to Run
 
