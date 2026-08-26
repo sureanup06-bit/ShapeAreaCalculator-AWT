@@ -103,7 +103,14 @@ class ShapeAreaCalculator_AWT
                             b4.addActionListener(new ActionListener(){
                                 public void actionPerformed(ActionEvent e)
                                 {
-                                    if (t1.getText().isEmpty() || Double.parseDouble(t1.getText()) < 0)
+                                    char c1;
+                                    String s1;
+                                    s1=t1.getText();
+                                    c1 = s1.charAt(0);
+                                    if (t1.getText().isEmpty() 
+                                        || Double.parseDouble(t1.getText()) < 0 
+                                        || c1 >= 'A' && c1<= 'Z' || c1>= 'a' && c1<= 'z'
+                                    )
                                     {
                                         l7 = new Label("Error : Invalid input ! ");
                                         l7.setBounds(20,150,200,20);
@@ -155,7 +162,14 @@ class ShapeAreaCalculator_AWT
                             b4.addActionListener(new ActionListener(){
                                 public void actionPerformed(ActionEvent e)
                                 {
-                                    if (t1.getText().isEmpty() || Double.parseDouble(t1.getText()) < 0)
+                                    char c1;
+                                    String s1;
+                                    s1=t1.getText();
+                                    c1 = s1.charAt(0);
+                                    if (t1.getText().isEmpty() 
+                                        || Double.parseDouble(t1.getText()) < 0
+                                        || c1 >= 'A' && c1<= 'Z' || c1>= 'a' && c1<= 'z'
+                                       )
                                     {
                                         l7 = new Label("Error : Invalid input ! ");
                                         l7.setBounds(20,150,200,20);
@@ -214,7 +228,19 @@ class ShapeAreaCalculator_AWT
                             b4.addActionListener(new ActionListener(){
                                 public void actionPerformed(ActionEvent e)
                                 {
-                                    if (t1.getText().isEmpty() || t2.getText().isEmpty() || Double.parseDouble(t1.getText()) < 0 || Double.parseDouble(t2.getText()) < 0)
+                                    char c1,c2;
+                                    String s1,s2;
+                                    s1=t1.getText();
+                                    c1 = s1.charAt(0);
+                                    s2 = t2.getText();
+                                    c2 = s2.charAt(0);
+                                    if (t1.getText().isEmpty() 
+                                        || t2.getText().isEmpty() 
+                                        || Double.parseDouble(t1.getText()) < 0 
+                                        || Double.parseDouble(t2.getText()) < 0
+                                        || c1 >= 'A' && c1<= 'Z' || c1>= 'a' && c1<= 'z'
+                                        || c2 >= 'A' && c2<= 'Z' || c2>= 'a' && c2<= 'z'
+                                    )
                                     {
                                         l7 = new Label("Error : Invalid input ! ");
                                         l7.setBounds(20,200,200,20);
@@ -276,7 +302,19 @@ class ShapeAreaCalculator_AWT
                             b4.addActionListener(new ActionListener(){
                                 public void actionPerformed(ActionEvent e)
                                 {
-                                    if (t1.getText().isEmpty() || t2.getText().isEmpty() || Double.parseDouble(t1.getText()) < 0 || Double.parseDouble(t2.getText()) < 0)
+                                    char c1,c2;
+                                    String s1,s2;
+                                    s1=t1.getText();
+                                    c1 = s1.charAt(0);
+                                    s2 = t2.getText();
+                                    c2 = s2.charAt(0);
+                                    if (t1.getText().isEmpty() 
+                                        || t2.getText().isEmpty() 
+                                        || Double.parseDouble(t1.getText()) < 0 
+                                        || Double.parseDouble(t2.getText()) < 0
+                                        || c1 >= 'A' && c1<= 'Z' || c1>= 'a' && c1<= 'z'
+                                        || c2 >= 'A' && c2<= 'Z' || c2>= 'a' && c2<= 'z'
+                                    )
                                     {
                                         l7 = new Label("Error : Invalid input ! ");
                                         l7.setBounds(20,200,200,20);
@@ -302,7 +340,8 @@ class ShapeAreaCalculator_AWT
                             break;
 
                     case "PARALLELOGRAM" :
-                        t1 = new TextField();
+
+                            t1 = new TextField();
                             t1.setBounds(210,100,70,20);
 
                             t2 = new TextField();
@@ -337,7 +376,19 @@ class ShapeAreaCalculator_AWT
                             b4.addActionListener(new ActionListener(){
                                 public void actionPerformed(ActionEvent e)
                                 {
-                                    if (t1.getText().isEmpty() || t2.getText().isEmpty() || Double.parseDouble(t1.getText()) < 0 || Double.parseDouble(t2.getText()) < 0)
+                                    char c1,c2;
+                                    String s1,s2;
+                                    s1=t1.getText();
+                                    c1 = s1.charAt(0);
+                                    s2 = t2.getText();
+                                    c2 = s2.charAt(0);
+                                    if (t1.getText().isEmpty() 
+                                        || t2.getText().isEmpty() 
+                                        || Double.parseDouble(t1.getText()) < 0 
+                                        || Double.parseDouble(t2.getText()) < 0
+                                        || c1 >= 'A' && c1<= 'Z' || c1>= 'a' && c1<= 'z'
+                                        || c2 >= 'A' && c2<= 'Z' || c2>= 'a' && c2<= 'z'
+                                    )
                                     {
                                         l7 = new Label("Error : Invalid input ! ");
                                         l7.setBounds(20,200,200,20);
@@ -399,7 +450,19 @@ class ShapeAreaCalculator_AWT
                             b4.addActionListener(new ActionListener(){
                                 public void actionPerformed(ActionEvent e)
                                 {
-                                    if (t1.getText().isEmpty() || t2.getText().isEmpty() || Double.parseDouble(t1.getText()) < 0 || Double.parseDouble(t2.getText()) < 0)
+                                    char c1,c2;
+                                    String s1,s2;
+                                    s1=t1.getText();
+                                    c1 = s1.charAt(0);
+                                    s2 = t2.getText();
+                                    c2 = s2.charAt(0);
+                                    if (t1.getText().isEmpty() 
+                                        || t2.getText().isEmpty() 
+                                        || Double.parseDouble(t1.getText()) < 0 
+                                        || Double.parseDouble(t2.getText()) < 0
+                                        || c1 >= 'A' && c1<= 'Z' || c1>= 'a' && c1<= 'z'
+                                        || c2 >= 'A' && c2<= 'Z' || c2>= 'a' && c2<= 'z'
+                                    )
                                     {
                                         l7 = new Label("Error : Invalid input ! ");
                                         l7.setBounds(20,200,200,20);
@@ -468,7 +531,24 @@ class ShapeAreaCalculator_AWT
                             b4.addActionListener(new ActionListener(){
                                 public void actionPerformed(ActionEvent e)
                                 {
-                                    if (t1.getText().isEmpty() || t2.getText().isEmpty() || t3.getText().isEmpty() || Double.parseDouble(t1.getText()) < 0 || Double.parseDouble(t2.getText()) < 0 || Double.parseDouble(t3.getText()) <0 )
+                                    char c1,c2,c3;
+                                    String s1,s2,s3;
+                                    s1=t1.getText();
+                                    c1 = s1.charAt(0);
+                                    s2 = t2.getText();
+                                    c2 = s2.charAt(0);
+                                    s3 = t3.getText();
+                                    c3 = s3.charAt(0);
+                                    if (t1.getText().isEmpty() 
+                                        || t2.getText().isEmpty() 
+                                        || t3.getText().isEmpty() 
+                                        || Double.parseDouble(t1.getText()) < 0 
+                                        || Double.parseDouble(t2.getText()) < 0 
+                                        || Double.parseDouble(t3.getText()) < 0
+                                        || c1 >= 'A' && c1<= 'Z' || c1 >= 'a' && c1<= 'z'
+                                        || c2 >= 'A' && c2<= 'Z' || c2 >= 'a' && c2<= 'z'
+                                        || c3 >= 'A' && c3<= 'Z' || c3 >= 'a' && c3<= 'z' 
+                                    )
                                     {
                                         l7 = new Label("Error : Invalid input ! ");
                                         l7.setBounds(20,250,200,20);
@@ -533,7 +613,19 @@ class ShapeAreaCalculator_AWT
                             b4.addActionListener(new ActionListener(){
                                 public void actionPerformed(ActionEvent e)
                                 {
-                                    if (t1.getText().isEmpty() || t2.getText().isEmpty() || Double.parseDouble(t1.getText()) < 0 || Double.parseDouble(t2.getText()) < 0)
+                                    char c1,c2;
+                                    String s1,s2;
+                                    s1=t1.getText();
+                                    c1 = s1.charAt(0);
+                                    s2 = t2.getText();
+                                    c2 = s2.charAt(0);
+                                    if (t1.getText().isEmpty() 
+                                        || t2.getText().isEmpty() 
+                                        || Double.parseDouble(t1.getText()) < 0 
+                                        || Double.parseDouble(t2.getText()) < 0
+                                        || c1 >= 'A' && c1<= 'Z' || c1>= 'a' && c1<= 'z'
+                                        || c2 >= 'A' && c2<= 'Z' || c2>= 'a' && c2<= 'z'
+                                       )
                                     {
                                         l7 = new Label("Error : Invalid input ! ");
                                         l7.setBounds(20,200,200,20);
