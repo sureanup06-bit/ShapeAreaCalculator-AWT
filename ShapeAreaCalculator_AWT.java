@@ -300,6 +300,68 @@ class ShapeAreaCalculator_AWT
                             f2.add(t1);
                             f2.add(t2);
                             break;
+
+                    case "PARALLELOGRAM" :
+                        t1 = new TextField();
+                            t1.setBounds(210,100,70,20);
+
+                            t2 = new TextField();
+                            t2.setBounds(210,150,70,20);
+
+                            l6 = new Label("");
+                            l6.setBounds(20,200,200,20);
+                            l6.setVisible(false);
+
+                            l5 = new Label("Enter Height of the Parallelogram :");
+                            l5.setBounds(20,100,182,20);
+
+                            l8 = new Label("Enter Bredth of the Parallelogram :");
+                            l8.setBounds(20,150,182,20);
+
+                            b4 = new Button("Calculate");
+                            b4.setBounds(70,250,60,20);
+
+                            b5 = new Button("clear");
+                            b5.setBounds(160,250,60,20);
+
+                            b5.addActionListener(new ActionListener() {
+                                public void actionPerformed(ActionEvent e)
+                                {
+                                    t1.setText("");
+                                    t2.setText("");
+                                    l6.setText("");
+                                    l6.setVisible(false);
+                                }
+                            });
+
+                            b4.addActionListener(new ActionListener(){
+                                public void actionPerformed(ActionEvent e)
+                                {
+                                    if (t1.getText().isEmpty() || t2.getText().isEmpty() || Double.parseDouble(t1.getText()) < 0 || Double.parseDouble(t2.getText()) < 0)
+                                    {
+                                        l7 = new Label("Error : Invalid input ! ");
+                                        l7.setBounds(20,200,200,20);
+                                        f2.add(l7);
+                                    }
+                                    else
+                                    {
+                                        Double h = Double.parseDouble(t1.getText());
+                                        Double b =Double.parseDouble(t2.getText());
+                                        double area = h*b;
+                                        l6.setVisible(true);
+                                        l6.setText("The Area Of Parallelogram is :"+" "+(float)area);
+                                    }
+                                }
+                            });                            
+                            f2.add(b4);
+                            f2.add(b5);
+                            f2.add(l5);
+                            f2.add(l6);
+                            f2.add(l8);
+                            f2.add(t1);
+                            f2.add(t2);
+                            break;
+
                 }
 
                 b3 = new Button("Home");
