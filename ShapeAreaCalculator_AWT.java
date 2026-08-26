@@ -14,7 +14,7 @@ class ShapeAreaCalculator_AWT
     Label l1,l2,l3,l4,l5,l6,l7,l8,l9;
     Choice c;
     Button b1,b2,b3,b4,b5;
-    TextField t1,t2;
+    TextField t1,t2,t3;
 
     ShapeAreaCalculator_AWT()
     {
@@ -254,7 +254,7 @@ class ShapeAreaCalculator_AWT
                             l5 = new Label("Enter Length of the Triangle :");
                             l5.setBounds(20,100,163,20);
 
-                            l8 = new Label("Enter Bredth of the Bredth :");
+                            l8 = new Label("Enter Bredth of the Triange:");
                             l8.setBounds(20,150,163,20);
 
                             b4 = new Button("Calculate");
@@ -361,6 +361,203 @@ class ShapeAreaCalculator_AWT
                             f2.add(t1);
                             f2.add(t2);
                             break;
+
+                    case "ROMBUS" :
+                    
+                            t1 = new TextField();
+                            t1.setBounds(210,100,70,20);
+
+                            t2 = new TextField();
+                            t2.setBounds(210,150,70,20);
+
+                            l6 = new Label("");
+                            l6.setBounds(20,200,200,20);
+                            l6.setVisible(false);
+
+                            l5 = new Label("Enter Height of the Rombus :");
+                            l5.setBounds(20,100,182,20);
+
+                            l8 = new Label("Enter Base of the Rombus :");
+                            l8.setBounds(20,150,182,20);
+
+                            b4 = new Button("Calculate");
+                            b4.setBounds(70,250,60,20);
+
+                            b5 = new Button("clear");
+                            b5.setBounds(160,250,60,20);
+
+                            b5.addActionListener(new ActionListener() {
+                                public void actionPerformed(ActionEvent e)
+                                {
+                                    t1.setText("");
+                                    t2.setText("");
+                                    l6.setText("");
+                                    l6.setVisible(false);
+                                }
+                            });
+
+                            b4.addActionListener(new ActionListener(){
+                                public void actionPerformed(ActionEvent e)
+                                {
+                                    if (t1.getText().isEmpty() || t2.getText().isEmpty() || Double.parseDouble(t1.getText()) < 0 || Double.parseDouble(t2.getText()) < 0)
+                                    {
+                                        l7 = new Label("Error : Invalid input ! ");
+                                        l7.setBounds(20,200,200,20);
+                                        f2.add(l7);
+                                    }
+                                    else
+                                    {
+                                        Double h = Double.parseDouble(t1.getText());
+                                        Double b =Double.parseDouble(t2.getText());
+                                        double area = h*b;
+                                        l6.setVisible(true);
+                                        l6.setText("The Area Of Rombus is :"+" "+(float)area);
+                                    }
+                                }
+                            });                            
+                            f2.add(b4);
+                            f2.add(b5);
+                            f2.add(l5);
+                            f2.add(l6);
+                            f2.add(l8);
+                            f2.add(t1);
+                            f2.add(t2);
+                            break;
+
+                    case "TRAPEZIUM" :
+
+                            t1 = new TextField();
+                            t1.setBounds(210,100,70,20);
+
+                            t2 = new TextField();
+                            t2.setBounds(210,150,70,20);
+
+                            t3 = new TextField();
+                            t3.setBounds(210,200,70,20);
+
+                            l6 = new Label("");
+                            l6.setBounds(20,250,200,20);
+                            l6.setVisible(false);
+
+                            l5 = new Label("Enter Lenght of first paralle side :");
+                            l5.setBounds(20,100,182,20);
+
+                            l8 = new Label("Enter Lenght of first paralle side :");
+                            l8.setBounds(20,150,182,20);
+
+                            l9 = new Label("Enter Height of the Trapezium :");
+                            l9.setBounds(20,200,182,20);
+
+                            b4 = new Button("Calculate");
+                            b4.setBounds(70,300,60,20);
+
+                            b5 = new Button("clear");
+                            b5.setBounds(160,300,60,20);
+
+                            b5.addActionListener(new ActionListener() {
+                                public void actionPerformed(ActionEvent e)
+                                {
+                                    t1.setText("");
+                                    t2.setText("");
+                                    t3.setText("");
+                                    l6.setText("");
+                                    l6.setVisible(false);
+                                }
+                            });
+
+                            b4.addActionListener(new ActionListener(){
+                                public void actionPerformed(ActionEvent e)
+                                {
+                                    if (t1.getText().isEmpty() || t2.getText().isEmpty() || t3.getText().isEmpty() || Double.parseDouble(t1.getText()) < 0 || Double.parseDouble(t2.getText()) < 0 || Double.parseDouble(t3.getText()) <0 )
+                                    {
+                                        l7 = new Label("Error : Invalid input ! ");
+                                        l7.setBounds(20,250,200,20);
+                                        f2.add(l7);
+                                    }
+                                    else
+                                    {
+                                        Double l1 = Double.parseDouble(t1.getText());
+                                        Double l2 =Double.parseDouble(t2.getText());
+                                        Double height = Double.parseDouble(t3.getText());
+                                        double area = ((l1+l2)*height)/2; 
+                                        l6.setVisible(true);
+                                        l6.setText("The Area Of Trapezium is :"+" "+(float)area);
+                                    }
+                                }
+                            });                            
+                            f2.add(b4);
+                            f2.add(b5);
+                            f2.add(l5);
+                            f2.add(l6);
+                            f2.add(l8);
+                            f2.add(l9);
+                            f2.add(t1);
+                            f2.add(t2);
+                            f2.add(t3);
+                            break;
+
+                    case "KITE" :
+
+                            t1 = new TextField();
+                            t1.setBounds(190,100,90,20);
+
+                            t2 = new TextField();
+                            t2.setBounds(190,150,90,20);
+
+                            l6 = new Label("");
+                            l6.setBounds(20,200,200,20);
+                            l6.setVisible(false);
+
+                            l5 = new Label("Enter Length of First digonal :");
+                            l5.setBounds(20,100,163,20);
+
+                            l8 = new Label("Enter Length of second digonal:");
+                            l8.setBounds(20,150,163,20);
+
+                            b4 = new Button("Calculate");
+                            b4.setBounds(70,250,60,20);
+
+                            b5 = new Button("clear");
+                            b5.setBounds(160,250,60,20);
+
+                            b5.addActionListener(new ActionListener() {
+                                public void actionPerformed(ActionEvent e)
+                                {
+                                    t1.setText("");
+                                    t2.setText("");
+                                    l6.setText("");
+                                    l6.setVisible(false);
+                                }
+                            });
+
+                            b4.addActionListener(new ActionListener(){
+                                public void actionPerformed(ActionEvent e)
+                                {
+                                    if (t1.getText().isEmpty() || t2.getText().isEmpty() || Double.parseDouble(t1.getText()) < 0 || Double.parseDouble(t2.getText()) < 0)
+                                    {
+                                        l7 = new Label("Error : Invalid input ! ");
+                                        l7.setBounds(20,200,200,20);
+                                        f2.add(l7);
+                                    }
+                                    else
+                                    {
+                                        Double d1 = Double.parseDouble(t1.getText());
+                                        Double d2 =Double.parseDouble(t2.getText());
+                                        double area = (d2*d1)/2;
+                                        l6.setVisible(true);
+                                        l6.setText("The Area Of Kite is :"+" "+(float)area);
+                                    }
+                                }
+                            });                            
+                            f2.add(b4);
+                            f2.add(b5);
+                            f2.add(l5);
+                            f2.add(l6);
+                            f2.add(l8);
+                            f2.add(t1);
+                            f2.add(t2);
+                            break;
+
 
                 }
 
