@@ -8,7 +8,8 @@ A simple **Java AWT GUI project** that calculates the area of different geometri
 * Enter the required measurements
 * Calculate the area
 * Clear input and results
-* Basic input validation
+* Input validation and error handling
+* Displays meaningful error messages
 * Uses separate frames for different shapes
 
 ## 🛠️ Technologies Used
@@ -30,6 +31,16 @@ A simple **Java AWT GUI project** that calculates the area of different geometri
 * Ellipse → Coming Soon
 * Hexagon → Coming Soon
 
+## ⚠️ Input Validation
+
+The calculator handles:
+
+* Empty input fields
+* String/alphabetic input
+* Zero values
+* Negative values
+* Invalid numerical input
+
 ## ▶️ How to Run
 
 1. Clone the repository.
@@ -39,7 +50,7 @@ A simple **Java AWT GUI project** that calculates the area of different geometri
 
 ## 🎯 Purpose
 
-This project was created to practice **Java AWT, GUI components, event handling, frames, buttons, input handling, and basic mathematical operations**.
+This project was created to practice **Java AWT, GUI components, event handling, frames, buttons, input validation, error handling, and basic mathematical operations**.
 
 ## 👨‍💻 Author
 
