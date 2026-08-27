@@ -103,18 +103,34 @@ class ShapeAreaCalculator_AWT
                             b4.addActionListener(new ActionListener(){
                                 public void actionPerformed(ActionEvent e)
                                 {
+                                    
+                                    if (t1.getText().isEmpty())
+                                    {
+                                        l6.setText("Error : Input field is Empty");
+                                        l6.setBounds(20,150,200,20);
+                                        l6.setVisible(true);
+                                        f2.add(l6);
+                                        return;
+                                    }
                                     char c1;
                                     String s1;
                                     s1=t1.getText();
                                     c1 = s1.charAt(0);
-                                    if (t1.getText().isEmpty() 
-                                        || Double.parseDouble(t1.getText()) < 0 
-                                        || c1 >= 'A' && c1<= 'Z' || c1>= 'a' && c1<= 'z'
-                                    )
+                                    if (c1 >= 'A' && c1<= 'Z' || c1>= 'a' && c1<= 'z')
                                     {
-                                        l7 = new Label("Error : Invalid input ! ");
-                                        l7.setBounds(20,150,200,20);
-                                        f2.add(l7);
+                                        l6.setText("Error : String detected");
+                                        l6.setBounds(20,150,200,20);
+                                        l6.setVisible(true);
+                                        f2.add(l6);
+                                        return;
+                                    }
+                                    if( Double.parseDouble(t1.getText()) <= 0)
+                                    {
+                                        l6.setText("Error : Area cannot be zero or less than 0");
+                                        l6.setBounds(20,150,250,20);
+                                        l6.setVisible(true);
+                                        f2.add(l6);
+                                        return;
                                     }
                                     else
                                     {
@@ -162,18 +178,33 @@ class ShapeAreaCalculator_AWT
                             b4.addActionListener(new ActionListener(){
                                 public void actionPerformed(ActionEvent e)
                                 {
+                                    if (t1.getText().isEmpty())
+                                    {
+                                        l6.setText("Error : Input field cannot be empty");
+                                        l6.setBounds(20,150,200,20);
+                                        l6.setVisible(true);
+                                        f2.add(l6);
+                                        return;
+                                    }
                                     char c1;
                                     String s1;
                                     s1=t1.getText();
                                     c1 = s1.charAt(0);
-                                    if (t1.getText().isEmpty() 
-                                        || Double.parseDouble(t1.getText()) < 0
-                                        || c1 >= 'A' && c1<= 'Z' || c1>= 'a' && c1<= 'z'
-                                       )
+                                    if(c1 >= 'A' && c1<= 'Z' || c1>= 'a' && c1<= 'z')
                                     {
-                                        l7 = new Label("Error : Invalid input ! ");
-                                        l7.setBounds(20,150,200,20);
-                                        f2.add(l7);
+                                        l6.setText("Error : String detected");
+                                        l6.setBounds(20,150,200,20);
+                                        l6.setVisible(true);
+                                        f2.add(l6);
+                                        return;
+                                    }
+                                    if(Double.parseDouble(t1.getText()) <= 0)
+                                    {
+                                        l6.setText("Error : Area connot be zero or less than 0");
+                                        l6.setBounds(20,150,250,20);
+                                        l6.setVisible(true);
+                                        f2.add(l6);
+                                        return;
                                     }
                                     else
                                     {
@@ -181,6 +212,7 @@ class ShapeAreaCalculator_AWT
                                         double area = s*s ;
                                         l6.setVisible(true);
                                         l6.setText("The Area Of Squair is :"+" "+(float)area);
+                                        return;
                                     }
                                 }
                             });                            
@@ -647,8 +679,8 @@ class ShapeAreaCalculator_AWT
                                         || Double.parseDouble(t2.getText()) <= 0
                                         )
                                     {
-                                        l6.setText("Error : Area cannot be zero");
-                                        l6.setBounds(20,200,200,20);
+                                        l6.setText("Error : Area cannot be zero or less than 0");
+                                        l6.setBounds(20,200,250,20);
                                         l6.setVisible(true);
                                         f2.add(l6);
                                         return;
