@@ -613,23 +613,45 @@ class ShapeAreaCalculator_AWT
                             b4.addActionListener(new ActionListener(){
                                 public void actionPerformed(ActionEvent e)
                                 {
-                                    char c1,c2;
-                                    String s1,s2;
-                                    s1=t1.getText();
-                                    c1 = s1.charAt(0);
-                                    s2 = t2.getText();
-                                    c2 = s2.charAt(0);
                                     if (t1.getText().isEmpty() 
                                         || t2.getText().isEmpty() 
-                                        || Double.parseDouble(t1.getText()) < 0 
-                                        || Double.parseDouble(t2.getText()) < 0
-                                        || c1 >= 'A' && c1<= 'Z' || c1>= 'a' && c1<= 'z'
-                                        || c2 >= 'A' && c2<= 'Z' || c2>= 'a' && c2<= 'z'
                                        )
                                     {
-                                        l7 = new Label("Error : Invalid input ! ");
-                                        l7.setBounds(20,200,200,20);
-                                        f2.add(l7);
+                                        l6.setText("Error : Input field is empty ");
+                                        l6.setBounds(20,200,200,20);
+                                        l6.setVisible(true);
+                                        f2.add(l6);
+                                        return;
+                                    }
+                                    char c1,c2;
+                                    String s1,s2;
+
+                                    s1=t1.getText();
+                                    s2 = t2.getText();
+
+                                    c1 = s1.charAt(0);
+                                    c2 = s2.charAt(0);
+
+                                    if (c1 >= 'A' && c1<= 'Z' || c1>= 'a' && c1<= 'z'
+                                        || c2 >= 'A' && c2<= 'Z' || c2>= 'a' && c2<= 'z'
+                                    )
+                                    
+                                    {
+                                        l6.setText("Error : String Detected");
+                                        l6.setBounds(20,200,200,20);
+                                        l6.setVisible(true);
+                                        f2.add(l6);
+                                        return;
+                                    }
+                                    if (Double.parseDouble(t1.getText()) <= 0 
+                                        || Double.parseDouble(t2.getText()) <= 0
+                                        )
+                                    {
+                                        l6.setText("Error : Area cannot be zero");
+                                        l6.setBounds(20,200,200,20);
+                                        l6.setVisible(true);
+                                        f2.add(l6);
+                                        return;
                                     }
                                     else
                                     {
