@@ -771,6 +771,177 @@ class ShapeAreaCalculator_AWT
                             f2.add(t1);
                             f2.add(t2);
                             break;
+                    case "ELLIPSE" :
+
+                            t1 = new TextField();
+                            t1.setBounds(190,100,90,20);
+
+                            t2 = new TextField();
+                            t2.setBounds(190,150,90,20);
+
+                            l6 = new Label("");
+                            l6.setBounds(20,200,200,20);
+                            l6.setVisible(false);
+
+                            l5 = new Label("Enter Length of Semi-Major axis :");
+                            l5.setBounds(20,100,163,20);
+
+                            l8 = new Label("Enter Length of Semi-Minor axis :");
+                            l8.setBounds(20,150,163,20);
+
+                            b4 = new Button("Calculate");
+                            b4.setBounds(70,250,60,20);
+
+                            b5 = new Button("clear");
+                            b5.setBounds(160,250,60,20);
+
+                            b5.addActionListener(new ActionListener() {
+                                public void actionPerformed(ActionEvent e)
+                                {
+                                    t1.setText("");
+                                    t2.setText("");
+                                    l6.setText("");
+                                    l6.setVisible(false);
+                                }
+                            });
+
+                            b4.addActionListener(new ActionListener(){
+                                public void actionPerformed(ActionEvent e)
+                                {
+                                    if (t1.getText().isEmpty() 
+                                        || t2.getText().isEmpty() 
+                                       )
+                                    {
+                                        l6.setText("Error : Input field is empty ");
+                                        l6.setBounds(20,200,200,20);
+                                        l6.setVisible(true);
+                                        f2.add(l6);
+                                        return;
+                                    }
+                                    char c1,c2;
+                                    String s1,s2;
+
+                                    s1=t1.getText();
+                                    s2 = t2.getText();
+
+                                    c1 = s1.charAt(0);
+                                    c2 = s2.charAt(0);
+
+                                    if (c1 >= 'A' && c1<= 'Z' || c1>= 'a' && c1<= 'z'
+                                        || c2 >= 'A' && c2<= 'Z' || c2>= 'a' && c2<= 'z'
+                                    )
+                                    
+                                    {
+                                        l6.setText("Error : String Detected");
+                                        l6.setBounds(20,200,200,20);
+                                        l6.setVisible(true);
+                                        f2.add(l6);
+                                        return;
+                                    }
+                                    if (Double.parseDouble(t1.getText()) <= 0 
+                                        || Double.parseDouble(t2.getText()) <= 0
+                                        )
+                                    {
+                                        l6.setText("Error : Area cannot be zero or less than 0");
+                                        l6.setBounds(20,200,250,20);
+                                        l6.setVisible(true);
+                                        f2.add(l6);
+                                        return;
+                                    }
+                                    else
+                                    {
+                                        Double sma1 = Double.parseDouble(t1.getText());
+                                        Double sma2 =Double.parseDouble(t2.getText());
+                                        double area = sma1*sma2*(22.0/7) ;
+                                        l6.setVisible(true);
+                                        l6.setText("The Area Of Ellipse is :"+" "+(float)area);
+                                    }
+                                }
+                            });                            
+                            f2.add(b4);
+                            f2.add(b5);
+                            f2.add(l5);
+                            f2.add(l6);
+                            f2.add(l8);
+                            f2.add(t1);
+                            f2.add(t2);
+                            break;
+
+                    case "HEXAGON" :
+                            
+                            
+                            t1 = new TextField();
+                            t1.setBounds(180,100,90,20);
+
+                            l6 = new Label("");
+                            l6.setBounds(20,150,200,20);
+                            l6.setVisible(false);
+
+                            l5 = new Label("Enter lenght of the side :");
+                            l5.setBounds(20,100,150,20);
+
+                            b4 = new Button("Calculate");
+                            b4.setBounds(70,200,60,20);
+
+                            b5 = new Button("clear");
+                            b5.setBounds(160,200,60,20);
+
+                            b5.addActionListener(new ActionListener() {
+                                public void actionPerformed(ActionEvent e)
+                                {
+                                    t1.setText("");
+                                    l6.setText("");
+                                    l6.setVisible(false);
+                                }
+                            });
+
+                            b4.addActionListener(new ActionListener(){
+                                public void actionPerformed(ActionEvent e)
+                                {
+                                    
+                                    if (t1.getText().isEmpty())
+                                    {
+                                        l6.setText("Error : Input field is Empty");
+                                        l6.setBounds(20,150,200,20);
+                                        l6.setVisible(true);
+                                        f2.add(l6);
+                                        return;
+                                    }
+                                    char c1;
+                                    String s1;
+                                    s1=t1.getText();
+                                    c1 = s1.charAt(0);
+                                    if (c1 >= 'A' && c1<= 'Z' || c1>= 'a' && c1<= 'z')
+                                    {
+                                        l6.setText("Error : String detected");
+                                        l6.setBounds(20,150,200,20);
+                                        l6.setVisible(true);
+                                        f2.add(l6);
+                                        return;
+                                    }
+                                    if( Double.parseDouble(t1.getText()) <= 0)
+                                    {
+                                        l6.setText("Error : Area cannot be zero or less than 0");
+                                        l6.setBounds(20,150,250,20);
+                                        l6.setVisible(true);
+                                        f2.add(l6);
+                                        return;
+                                    }
+                                    else
+                                    {
+                                        Double side = Double.parseDouble(t1.getText());
+                                        double area = ((3*1.73)/2)*side*side ;
+                                        l6.setVisible(true);
+                                        l6.setText("The Area Of Hexagon is :"+" "+(float)area);
+                                    }
+                                }
+                            });                            
+                            f2.add(b4);
+                            f2.add(b5);
+                            f2.add(l5);
+                            f2.add(l6);
+                            f2.add(t1);
+                            break;
 
 
                 }
