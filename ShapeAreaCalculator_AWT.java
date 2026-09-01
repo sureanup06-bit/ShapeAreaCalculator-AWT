@@ -103,43 +103,31 @@ class ShapeAreaCalculator_AWT
                             b4.addActionListener(new ActionListener(){
                                 public void actionPerformed(ActionEvent e)
                                 {
-                                    
-                                    if (t1.getText().isEmpty())
+
+                                    try
                                     {
-                                        l6.setText("Error : Input field is Empty");
-                                        l6.setBounds(20,150,200,20);
-                                        l6.setVisible(true);
-                                        f2.add(l6);
-                                        return;
-                                    }
-                                    char c1;
-                                    String s1;
-                                    s1=t1.getText();
-                                    c1 = s1.charAt(0);
-                                    if (c1 >= 'A' && c1<= 'Z' || c1>= 'a' && c1<= 'z')
+                                    Double r = Double.parseDouble(t1.getText());
+                                    if(r == 0)
                                     {
-                                        l6.setText("Error : String detected");
-                                        l6.setBounds(20,150,200,20);
+                                        l6.setText("Error : Length cannot be zero");
                                         l6.setVisible(true);
-                                        f2.add(l6);
-                                        return;
-                                    }
-                                    if( Double.parseDouble(t1.getText()) <= 0)
-                                    {
-                                        l6.setText("Error : Area cannot be zero or less than 0");
-                                        l6.setBounds(20,150,250,20);
-                                        l6.setVisible(true);
-                                        f2.add(l6);
-                                        return;
                                     }
                                     else
                                     {
-                                        Double r = Double.parseDouble(t1.getText());
                                         double area = 22.0/7*r*r ;
                                         l6.setVisible(true);
                                         l6.setText("The Area Of Circle is :"+" "+(float)area);
                                     }
+                                    }
+                                    catch (Exception l)                                        {
+                                            
+                                        l6.setText("Error : Invalid input !");
+                                        l6.setVisible(true);
+                                        f2.add(l6);
+                                    }
+                                        
                                 }
+                                
                             });                            
                             f2.add(b4);
                             f2.add(b5);
