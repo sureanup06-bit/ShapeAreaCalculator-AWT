@@ -439,43 +439,26 @@ class ShapeAreaCalculator_AWT
                             b4.addActionListener(new ActionListener(){
                                 public void actionPerformed(ActionEvent e)
                                 {
-                                    if (t1.getText().isEmpty() || t2.getText().isEmpty())
-                                    {
-                                        l6.setText("Error : Textfield cannot be empty");
-                                        l6.setBounds(20,200,250,20);
-                                        l6.setVisible(true);
-                                        f2.add(l6);
-                                        return;
-                                    }
-                                    char c1,c2;
-                                    String s1,s2;
-                                    s1=t1.getText();
-                                    c1 = s1.charAt(0);
-                                    s2 = t2.getText();
-                                    c2 = s2.charAt(0);
-                                    if(c1 >= 'A' && c1<= 'Z' || c1>= 'a' && c1<= 'z'|| c2 >= 'A' && c2<= 'Z' || c2>= 'a' && c2<= 'z')
-                                    {
-                                        l6.setText("Error : String detected");
-                                        l6.setBounds(20,200,250,20);
-                                        l6.setVisible(true);
-                                        f2.add(l6);
-                                        return;
-                                    }
-                                    if(Double.parseDouble(t1.getText()) <= 0 || Double.parseDouble(t2.getText()) <= 0)
-                                    {
-                                        l6.setText("Error : Area connot be zero or negative");
-                                        l6.setBounds(20,200,250,20);
-                                        l6.setVisible(true);
-                                        f2.add(l6);
-                                        return;
-                                    }
-                                    else
+                                    try
                                     {
                                         Double h = Double.parseDouble(t1.getText());
                                         Double b =Double.parseDouble(t2.getText());
+                                        if (h == 0 || b == 0)
+                                        {
+                                            l6.setText("Error : Length cannot be zero");
+                                            l6.setVisible(true);
+                                        }
+                                        else
+                                        {
                                         double area = h*b;
                                         l6.setVisible(true);
                                         l6.setText("The Area Of Rombus is :"+" "+(float)area);
+                                        }
+                                    } 
+                                    catch(NumberFormatException ex)
+                                    {
+                                        l6.setText("Error : Invalid input");
+                                        l6.setVisible(true);
                                     }
                                 }
                             });                            
@@ -531,57 +514,33 @@ class ShapeAreaCalculator_AWT
 
                             b4.addActionListener(new ActionListener(){
                                 public void actionPerformed(ActionEvent e)
-                                {
-                                    
-                                    if (t1.getText().isEmpty() 
-                                        || t2.getText().isEmpty() 
-                                        || t3.getText().isEmpty() 
-                                       )
-                                    {
-                                        l6.setText("Error : Textfield cannot be empty");
-                                        l6.setBounds(20,250,200,20);
-                                        l6.setVisible(true);
-                                        f2.add(l6);
-                                        return;
-                                    }
-                                    char c1,c2,c3;
-                                    String s1,s2,s3;
-                                    s1=t1.getText();
-                                    c1 = s1.charAt(0);
-                                    s2 = t2.getText();
-                                    c2 = s2.charAt(0);
-                                    s3 = t3.getText();
-                                    c3 = s3.charAt(0);
-                                    if(c1 >= 'A' && c1<= 'Z' || c1 >= 'a' && c1<= 'z'
-                                        || c2 >= 'A' && c2<= 'Z' || c2 >= 'a' && c2<= 'z'
-                                        || c3 >= 'A' && c3<= 'Z' || c3 >= 'a' && c3<= 'z' 
-                                       )
-                                    {
-                                        l6.setText("Error : String detected");
-                                        l6.setBounds(20,250,200,20);
-                                        l6.setVisible(true);
-                                        f2.add(l6);
-                                        return;
-                                    }
-                                    if (   Double.parseDouble(t1.getText()) <= 0 
-                                        || Double.parseDouble(t2.getText()) <= 0 
-                                        || Double.parseDouble(t3.getText()) <= 0   
-                                       )
-                                    {
-                                        l6.setText("Error : Area cannot be zero or negative");
-                                        l6.setBounds(20,250,250,20);
-                                        l6.setVisible(true);
-                                        f2.add(l6);
-                                        return;
-                                    }
-                                    else
+                                {   
+                                    try
                                     {
                                         Double l1 = Double.parseDouble(t1.getText());
                                         Double l2 =Double.parseDouble(t2.getText());  
                                         Double height = Double.parseDouble(t3.getText());
+                                        if (l1 == 0 || l2 == 0)
+                                        {
+                                            l6.setText("Error : Length cannot be zero");
+                                            l6.setVisible(true);
+                                        }
+                                        if (height == 0)
+                                        {
+                                            l6.setText("Error : Height cannot be zero");
+                                            l6.setVisible(true);
+                                        }
+                                        else
+                                        {
                                         double area = ((l1+l2)*height)/2; 
                                         l6.setVisible(true);
                                         l6.setText("The Area Of Trapezium is :"+" "+(float)area);
+                                        }
+                                    }
+                                    catch(NumberFormatException ex)
+                                    {
+                                        l6.setText("Error : Invalid input");
+                                        l6.setVisible(true);
                                     }
                                 }
                             });                            
@@ -633,53 +592,26 @@ class ShapeAreaCalculator_AWT
                             b4.addActionListener(new ActionListener(){
                                 public void actionPerformed(ActionEvent e)
                                 {
-                                    if (t1.getText().isEmpty() 
-                                        || t2.getText().isEmpty() 
-                                       )
-                                    {
-                                        l6.setText("Error : Input field is empty ");
-                                        l6.setBounds(20,200,200,20);
-                                        l6.setVisible(true);
-                                        f2.add(l6);
-                                        return;
-                                    }
-                                    char c1,c2;
-                                    String s1,s2;
-
-                                    s1=t1.getText();
-                                    s2 = t2.getText();
-
-                                    c1 = s1.charAt(0);
-                                    c2 = s2.charAt(0);
-
-                                    if (c1 >= 'A' && c1<= 'Z' || c1>= 'a' && c1<= 'z'
-                                        || c2 >= 'A' && c2<= 'Z' || c2>= 'a' && c2<= 'z'
-                                    )
-                                    
-                                    {
-                                        l6.setText("Error : String Detected");
-                                        l6.setBounds(20,200,200,20);
-                                        l6.setVisible(true);
-                                        f2.add(l6);
-                                        return;
-                                    }
-                                    if (Double.parseDouble(t1.getText()) <= 0 
-                                        || Double.parseDouble(t2.getText()) <= 0
-                                        )
-                                    {
-                                        l6.setText("Error : Area cannot be zero or less than 0");
-                                        l6.setBounds(20,200,250,20);
-                                        l6.setVisible(true);
-                                        f2.add(l6);
-                                        return;
-                                    }
-                                    else
+                                    try
                                     {
                                         Double d1 = Double.parseDouble(t1.getText());
                                         Double d2 =Double.parseDouble(t2.getText());
+                                        if (d1 == 0 || d2 == 0)
+                                        {
+                                            l6.setText("Error : Length cannot be zero");
+                                            l6.setVisible(true);
+                                        }
+                                        else
+                                        {
                                         double area = (d2*d1)/2;
                                         l6.setVisible(true);
                                         l6.setText("The Area Of Kite is :"+" "+(float)area);
+                                        }
+                                    }
+                                    catch(NumberFormatException ex)
+                                    {
+                                        l6.setText("Error : Invalid input !");
+                                        l6.setVisible(true);
                                     }
                                 }
                             });                            
