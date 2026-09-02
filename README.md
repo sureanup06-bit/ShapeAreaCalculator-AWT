@@ -1,157 +1,157 @@
-# Shape Area Calculator – AWT
+# Shape Area Calculator
 
-A Java AWT-based GUI application that calculates the area of different geometric shapes. The project provides a simple graphical interface where users can select a shape, enter the required dimensions, and calculate its area.
+A simple and interactive **Java AWT-based GUI application** that calculates the area of different geometric shapes. The user can select a shape, enter the required dimensions, and get the calculated area instantly.
 
-## ✨ Features
+## Project Overview
 
-* GUI built using **Java AWT**
-* Shape selection using `Choice`
-* Separate calculation interface for each shape
-* Input validation for:
+**Shape Area Calculator** is designed to demonstrate the use of **Java AWT, GUI components, event handling, mathematical calculations, and exception handling** in a practical application.
 
-  * Empty input fields
-  * Alphabetic/string input
-  * Zero or negative values
+The project supports **10 different geometric shapes** and provides a separate calculation interface according to the selected shape. It also includes basic input validation to handle invalid and zero values.
+
+## Shapes Supported
+
+The calculator supports **10 shapes**:
+
+* Circle
+* Square
+* Rectangle
+* Triangle
+* Parallelogram
+* Rhombus
+* Trapezium
+* Kite
+* Ellipse
+* Hexagon
+
+## Formulas Used
+
+| Shape         | Formula                                    |
+| ------------- | ------------------------------------------ |
+| Circle        | `22/7 × r²`                                |
+| Square        | `side²`                                    |
+| Rectangle     | `length × breadth`                         |
+| Triangle      | `(length × breadth) / 2`                   |
+| Parallelogram | `height × breadth`                         |
+| Rhombus       | `height × base`                            |
+| Trapezium     | `((side₁ + side₂) × height) / 2`           |
+| Kite          | `(diagonal₁ × diagonal₂) / 2`              |
+| Ellipse       | `22/7 × semi-major axis × semi-minor axis` |
+| Hexagon       | `(3 × 1.73 / 2) × side²`                   |
+
+## Features
+
+* Simple Java AWT graphical interface
+* Supports 10 geometric shapes
+* Shape selection through a dropdown menu
+* Individual input fields based on the selected shape
+* Instant area calculation
 * Clear button to reset input fields
 * Home button to return to the main menu
-* Displays calculated area directly in the GUI
-* Uses `ActionListener` for button events
+* Basic input validation
+* Exception handling for invalid numeric input
+* Error messages for invalid and zero values
 
-## 📐 Supported Shapes
+## Error Handling
 
-The calculator currently supports:
+The application handles common invalid inputs using exception handling.
 
-1. Circle
-2. Square
-3. Rectangle
-4. Triangle
-5. Parallelogram
-6. Rhombus
-7. Trapezium
-8. Kite
-9. Ellipse
-10. Regular Hexagon
+### Invalid Input
 
-## 🧮 Formulas Used
+If a non-numeric or otherwise invalid value is entered:
 
-| Shape           | Formula         |
-| --------------- | --------------- |
-| Circle          | πr²             |
-| Square          | s²              |
-| Rectangle       | l × b           |
-| Triangle        | ½ × b × h       |
-| Parallelogram   | b × h           |
-| Rhombus         | b × h           |
-| Trapezium       | ½ × (a + b) × h |
-| Kite            | ½ × d₁ × d₂     |
-| Ellipse         | π × a × b       |
-| Regular Hexagon | (3√3 / 2) × s²  |
+`Error : Invalid input`
 
-## 🛡️ Input Validation
+### Zero Value
 
-The program checks user input before performing calculations.
+If a required length is entered as zero:
 
-### Empty Input
+`Error : Length cannot be zero`
 
-If a required field is left empty, an error message is displayed.
+For trapezium height:
 
-### String Input
+`Error : Height cannot be zero`
 
-Alphabetic input such as `abc` is detected and rejected.
-
-### Zero or Negative Input
-
-Dimensions must be greater than zero. Zero and negative values are rejected.
-
-### Clear Function
-
-The **Clear** button removes the entered values and previous error/output messages.
-
-## 🖥️ GUI Structure
-
-### Main Menu
-
-The main menu contains:
-
-* Shape selection dropdown
-* Select button
-* Selected shape display
-* Calculate button
-
-### Calculation Window
-
-The calculation window contains:
-
-* Shape-specific input fields
-* Calculate button
-* Clear button
-* Area/output display
-* Home button
-
-## ⚙️ Technologies Used
+## Technologies Used
 
 * **Java**
-* **AWT (Abstract Window Toolkit)**
+* **Java AWT**
 * **Event Handling**
-* `ActionListener`
+* **Exception Handling**
+
+### AWT Components
+
 * `Frame`
 * `Label`
 * `Button`
-* `TextField`
 * `Choice`
+* `TextField`
 
-## ▶️ How to Run
+### Event Handling
 
-### 1. Compile
+* `ActionListener`
+* `ActionEvent`
+
+## How It Works
+
+1. Launch the application.
+2. Select a shape from the dropdown menu.
+3. Click **Select** to display the selected shape.
+4. Click **Calculate** to open the calculation window.
+5. Enter the required dimensions.
+6. Click **Calculate** to display the area.
+7. Use **Clear** to reset the entered values.
+8. Use **Home** to return to the main menu.
+
+## Project Structure
+
+```text
+ShapeAreaCalculator_AWT/
+│
+└── ShapeAreaCalculator_AWT.java
+```
+
+## How to Run
+
+### Compile
 
 ```bash
 javac ShapeAreaCalculator_AWT.java
 ```
 
-### 2. Run
+### Run
 
 ```bash
 java ShapeAreaCalculator_AWT
 ```
 
-## 📁 Project Structure
+## Learning Outcomes
 
-```text
-ShapeAreaCalculator/
-│
-├── ShapeAreaCalculator_AWT.java
-└── README.md
-```
+This project helped in understanding and practicing:
 
-## 📌 Project Highlights
-
-This project was developed to practice:
-
-* Java GUI development
-* AWT components
+* Java AWT GUI development
+* Creating and managing GUI components
 * Event-driven programming
-* `switch` statements
-* String handling
-* Type conversion using `Double.parseDouble()`
-* Conditional statements
-* Input validation
-* Working with multiple GUI components
-* Organizing a multi-shape calculation program
+* `ActionListener` and `ActionEvent`
+* `switch-case` statements
+* User input through `TextField`
+* Mathematical calculations
+* Basic input validation
+* Exception handling using `try-catch`
+* Working with multiple GUI windows
 
-## 🚀 Future Improvements
+## Future Improvements
 
-Possible improvements for future versions:
-
-* Add the remaining input validation cases for non-alphabetic invalid characters
-* Replace repeated code with reusable methods
-* Improve GUI layout using layout managers
+* Improve the overall GUI design
 * Add more geometric shapes
-* Add a more modern GUI using **Swing** or **JavaFX**
-* Add proper window-closing functionality
-* Improve mathematical precision by using `Math.PI`
+* Improve input validation
+* Improve calculation precision
+* Reduce code repetition using reusable methods
+* Add a more modern graphical interface
 
-## 👨‍💻 Author
+## Author
 
 **Anup Sure**
 
-> Built as a Java AWT GUI project to practice event handling, GUI development, mathematical calculations, and input validation.
+---
+
+**Project Status:** Completed

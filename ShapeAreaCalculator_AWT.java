@@ -525,7 +525,7 @@ class ShapeAreaCalculator_AWT
                                             l6.setText("Error : Length cannot be zero");
                                             l6.setVisible(true);
                                         }
-                                        if (height == 0)
+                                        else if (height == 0)
                                         {
                                             l6.setText("Error : Height cannot be zero");
                                             l6.setVisible(true);
